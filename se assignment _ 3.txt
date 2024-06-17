@@ -1,0 +1,145 @@
+## Developer Environment Setup Documentation
+
+### 1. Introduction
+This document outlines the steps taken to set up a developer environment for the project named "trial 1." It includes configurations, customizations, troubleshooting steps, and a reflection on the challenges faced during the setup process.
+
+### 2. System Specifications
+- **Operating System**: Windows 10
+- **Editor**: Visual Studio Code
+- **Version Control**: Git
+- **Languages**: Python, JavaScript
+
+### 3. Steps to Set Up the Developer Environment
+
+#### Step 1: Install Visual Studio Code
+1. **Download Visual Studio Code** from the [official website](https://code.visualstudio.com/).
+2. **Run the installer** and follow the on-screen instructions.
+3. **Default Installation Path**: `C:\Users\{Username}\AppData\Local\Programs\Microsoft VS Code`
+
+![VS Code Installation](https://code.visualstudio.com/assets/docs/getstarted/welcome/win_installer.png)
+
+#### Step 2: Install Git
+1. **Download Git** from the [official website](https://git-scm.com/).
+2. **Run the installer** and follow the on-screen instructions.
+3. **Configure Git** with your username and email:
+   ```sh
+   git config --global user.name "Your Name"
+   git config --global user.email "youremail@example.com"
+   ```
+
+![Git Installation](https://git-scm.com/images/logo@2x.png)
+
+#### Step 3: Set Up Visual Studio Code Extensions
+1. **Open Visual Studio Code**.
+2. **Navigate to Extensions** by clicking on the Extensions icon in the sidebar.
+3. **Install the following extensions**:
+   - Python
+   - ESLint
+   - Prettier - Code formatter
+   - GitLens — Git supercharged
+   - Live Share
+
+![VS Code Extensions](https://code.visualstudio.com/assets/docs/editor/extension-marketplace/extension-marketplace.png)
+
+#### Step 4: Configure Visual Studio Code
+1. **Open User Settings**: File > Preferences > Settings
+2. **Add the following configurations**:
+   ```json
+   {
+     "editor.formatOnSave": true,
+     "python.pythonPath": "C:\\Python39\\python.exe",
+     "files.exclude": {
+       "**/__pycache__": true,
+       "**/*.pyc": true
+     },
+     "eslint.enable": true,
+     "prettier.singleQuote": true
+   }
+   ```
+
+![VS Code Settings](https://code.visualstudio.com/assets/docs/getstarted/settings/settings-editor.png)
+
+#### Step 5: Initialize a Git Repository
+1. **Create a new directory** for your project.
+   ```sh
+   mkdir trial-1
+   cd trial-1
+   ```
+2. **Initialize Git**:
+   ```sh
+   git init
+   ```
+3. **Create a `.gitignore` file**:
+   ```sh
+   touch .gitignore
+   ```
+   Add the following to `.gitignore`:
+   ```gitignore
+   node_modules/
+   .env
+   __pycache__/
+   *.pyc
+   .vscode/
+   ```
+
+![Git Initialization](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png)
+
+#### Step 6: Create a Sample Project
+1. **Create a simple Python script**:
+   ```python
+   # trial-1/main.py
+   print("Hello, world!")
+   ```
+2. **Create a simple JavaScript script**:
+   ```javascript
+   // trial-1/index.js
+   console.log("Hello, world!");
+   ```
+
+### 4. Troubleshooting Steps
+- **Issue**: Visual Studio Code not recognizing Python interpreter.
+  **Solution**: Ensure Python is installed and added to the system PATH. Update the `python.pythonPath` in VS Code settings to the correct path.
+- **Issue**: ESLint not working.
+  **Solution**: Make sure ESLint is installed globally or in the project directory. Configure `.eslintrc.json` properly.
+  ```json
+  {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {
+    }
+  }
+  ```
+
+### 5. GitHub Repository
+- **Repository Name**: trial-1
+- **URL**: [GitHub Repository](https://github.com/emmanuelmailukyalo/trial-1.git)
+
+### 6. Reflection
+During the setup process, several challenges were encountered:
+- **Challenge**: Configuring the Python interpreter in Visual Studio Code.
+  **Strategy**: Verified the Python installation and updated the `settings.json` file with the correct path.
+- **Challenge**: Ensuring consistent code formatting across the team.
+  **Strategy**: Installed and configured Prettier and ESLint to enforce code style guidelines.
+
+### 7. Conclusion
+This document provides a comprehensive guide to setting up a developer environment with Visual Studio Code and Git. By following these steps, you can ensure a consistent and efficient development workflow.
+
+### 8. Screenshots
+Include relevant screenshots to illustrate each step.
+
+### Submission
+Submit the document and the GitHub repository link to emmanuel.k.mailu20@gmail.com by the specified deadline.
+
+### Evaluation Criteria
+- **Completeness and accuracy of setup documentation**.
+- **Effectiveness of version control implementation**.
+- **Appropriateness of tools selected for the project requirements**.
+- **Clarity of reflection on challenges and solutions encountered**.
+- **Adherence to submission guidelines and deadlines**.
